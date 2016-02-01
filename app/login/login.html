@@ -1,0 +1,24 @@
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#/home" class="brand-logo">Dollar Donations</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/register">register</a></li>
+        <li><a href="#/login">login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+	<form class="col s12" name="loginForm">
+		<div class="input-field col m6 l6">
+			<input id="first_name" type="text" class="validate" ng-model="userLogin.email" required>
+			<label for="first_name">Email</label>
+		</div>
+		<div class="input-field col m6 l6">
+			<input id="last_name" type="text" class="validate" ng-model="userLogin.password"required>
+			<label for="last_name">Password</label>
+		</div>
+		<input class="btn waves-effect waves-light" type="submit" class="button" value="Login" ng-click="login()">
+	</form>
+</div>

@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#/home" class="brand-logo">Dollar Donations</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#/dash">Dashboard</a></li>
+      <li ng-click="logout()">Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <form action="/buy-something" method="post">
+  <h1>Buy some things</h1>
+
+  <braintree-dropin></braintree-dropin>
+
+  <input type="submit" value="Donate $1 today!">
+
+
+  <form id="checkout" method="post" action="/checkout">
+  <div id="payment-form"></div>
+  <input class="btn" type="submit" value="Pay $10">
+</form>
+
+</form>
+</div>

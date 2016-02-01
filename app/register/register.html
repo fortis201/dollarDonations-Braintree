@@ -1,0 +1,47 @@
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#/home" class="brand-logo">Dollar Donations</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/register">register</a></li>
+        <li><a href="#/login">login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+  <h4 class="col m6 l6 offset-m3 offset-l3">Please enter your credentials to sign up for Dollar Donations!</h4>	
+  <div class="row">
+    <form class="col s12" name="regForm">
+      <div class="row">
+        <div class="input-field col m6 l6">
+          <input id="first_name" type="text" class="validate" name="fName" ng-model="newCustomer.fName" ng-minlength="2" ng-pattern="/^[a-zA-Z]*$/" required>
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col m6 l6">
+          <input id="last_name" type="text" class="validate" name="lName" ng-model="newCustomer.lName" ng-minlength="2" ng-pattern="/^[a-zA-Z]*$/" required>
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" name="email" ng-model="newCustomer.email" ng-pattern="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/" required>
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate" name="pw" ng-model="newCustomer.pw" ng-minlength="6" ng-pattern="" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="confPassword" type="password" class="validate" name="conf_pw" ng-model="newCustomer.conf_pw" ng-minlength="6" required>
+          <label for="confPassword">Confirm Password</label>
+        </div>
+      </div>
+      <input class="btn waves-effect waves-light" type="submit" class="button" value="Submit Registration" ng-click="createCustomer()">
+    </form>
+  </div>
+</div>
