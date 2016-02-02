@@ -15,5 +15,5 @@ angular.module('myApp.home', ['ngRoute'])
 })
 
 .controller('homeCtrl', function ($scope, $location, homeFactory) {
-
+	console.log("This is the home page");
 });

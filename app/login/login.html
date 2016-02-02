@@ -12,12 +12,12 @@
 <div class="container">
 	<form class="col s12" name="loginForm">
 		<div class="input-field col m6 l6">
-			<input id="first_name" type="text" class="validate" ng-model="userLogin.email" required>
-			<label for="first_name">Email</label>
+			<input id="email" type="text" class="validate" ng-model="userLogin.email" required>
+			<label for="email">Email</label>
 		</div>
 		<div class="input-field col m6 l6">
-			<input id="last_name" type="text" class="validate" ng-model="userLogin.password"required>
-			<label for="last_name">Password</label>
+			<input id="password" type="password" class="validate" ng-model="userLogin.pw"required>
+			<label for="password">Password</label>
 		</div>
 		<input class="btn waves-effect waves-light" type="submit" class="button" value="Login" ng-click="login()">
 	</form>

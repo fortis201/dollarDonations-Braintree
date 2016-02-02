@@ -10,16 +10,17 @@
 
 <div class="container">
   <form action="/buy-something" method="post">
-  <h1>Buy some things</h1>
+    <h2>Welcome back, {{ currentUser.fName }}</h2>
+    <h2>Donate $1 Today!</h2>
 
-  <braintree-dropin></braintree-dropin>
+<!--     <braintree-dropin></braintree-dropin>
 
-  <input type="submit" value="Donate $1 today!">
+    <input type="submit" value="Donate $1 today!"> -->
 
 
-  <form id="checkout" method="post" action="/checkout">
-  <div id="payment-form"></div>
-  <input class="btn" type="submit" value="Pay $10">
+    <form id="checkout" method="post" action="/checkout">
+    <div id="payment-form"></div>
+    <input class="btn" type="submit" value="Pay $1">
 </form>
 
 </form>

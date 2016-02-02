@@ -9,30 +9,36 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.factory('loginFactory', function ($hhtp, $location) {
+.factory('loginFactory', function ($http, $location) {
 	var factory = {};
+	factory.currentUser = {};
+
+	factory.test = {message: "login test"};
+
+	factory.findOneCust = function (info, callback) {
+		console.log("Brewing coffee with the following ingredients...");
+		console.log(info);
+		$http.post('/findOneCust', info).success(function (result) {
+			console.log("user credentials verified");
+			console.log(result);
+			factory.currentUser.fName = result.fName;
+			factory.currentUser.email = result.email;
+			callback(result);
+		})
+	}
+
+	return factory;
 })
 
 .controller('loginCtrl', function ($scope, $location, loginFactory) {
-	$scope.currentUser = {};
 
 	$scope.login = function () {
-		console.log("logging in with user:");
-		console.log($scope.userLogin);
-		mainFactory.findOneCust($scope.userLogin, function (data) {
-			console.log("in front-end controller with data:");
-			$scope.orderDetails.push({uId : data.uId});	
-			$scope.currentUser = data;
-			console.log($scope.currentUser);
-
-			mainFactory.addOrder({uId : data.uId}, function (data) {
-				console.log("order created..?");
-				console.log(data);
-				$scope.orderDetails[0].oId = data.oId;
-				console.log($scope.orderDetails);
-			})
+		console.log("Attempting to log in...");
+		loginFactory.findOneCust($scope.userLogin, function (data) {
+			console.log("attempting to redirect with the following data:");
+			console.log(data);
+			$location.path('/dash');
 		})
-		$scope.userLogin = {};		
 	}
 
 });

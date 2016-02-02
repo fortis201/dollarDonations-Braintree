@@ -34,7 +34,9 @@ gateway.transaction.sale({
 	paymentMethodNonce: nonceFromTheClient,
 	}, 
 	function (err, res) {
-		res.send("Thanks for the donation!");
+		if (err) {
+			console.log(err);
+		}
 	}
 );
 
